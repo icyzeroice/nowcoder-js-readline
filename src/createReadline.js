@@ -14,6 +14,7 @@ function joinYield(str) {
 
 function createReadline(str) {
 
+  // TODO: Error Check
   // construct a generator function
   let readlineGenerator = new Function(`return function* readline() {${joinYield(str)} return undefined;}`);
   

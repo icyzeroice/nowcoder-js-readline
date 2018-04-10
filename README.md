@@ -1,4 +1,9 @@
-# 牛客网在线编程离线测试 readline & print 模块 - **伪**
+# 牛客网在线编程离线测试 readline & print 模块（伪）
+
+[![NPM](https://nodei.co/npm/nowcoder-js-readline.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/nowcoder-js-readline/)
+
+[![npm](https://img.shields.io/npm/dw/nowcoder-js-readline.svg?style=flat-square)](https://www.npmjs.com/package/nowcoder-js-readline)
+[![npm](https://img.shields.io/npm/dt/nowcoder-js-readline.svg?style=flat-square)](https://www.npmjs.com/package/nowcoder-js-readline)
 
 虽然说看上去像是牛客网 `readline` 和 `print` 模块，但还是得在 node 环境下使用。
 
