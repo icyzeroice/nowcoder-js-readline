@@ -2,19 +2,17 @@
   "name": "nowcoder-js-readline",
   "version": "0.0.1",
   "description": "Help you test your code offline and copy it to nowcoder easily with JavaScript.",
-  "repository" : {
-    "type" : "git"
-  , "url" : "git@github.com:icyzeroice/nowcoder-js-readline.git"
-  },
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "demo": "node ./test/demo.js"
   },
+  "repository" : {
+    "type" : "git"
+  , "url" : "https://github.com/icyzeroice/nowcoder-js-readline.git"
+  },
   "keywords": [
     "nowcoder",
-    "js",
-    "javascript",
     "readline",
     "print"
   ],
