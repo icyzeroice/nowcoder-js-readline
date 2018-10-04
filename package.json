@@ -1,6 +1,6 @@
 {
   "name": "nowcoder-js-readline",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Help you test your code offline and copy it to nowcoder easily with JavaScript.",
   "main": "./src/index.js",
   "scripts": {

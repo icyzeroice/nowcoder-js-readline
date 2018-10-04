@@ -1,28 +1,39 @@
 /**
- * TODO: Add support for nowcoder node.js mode.
+ * @class GeneratorFunction
+ * @tutorial https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction
  */
+const GeneratorFunction = Object.getPrototypeOf(function* () {}).constructor
 
-function joinYield(str) {
+/**
+ * 关于闭包中的变量回收机制
+ * @tutorial http://justjavac.iteye.com/blog/1465169
+ * 
+ * @param {string} str 
+ * @returns {Function}
+ */
+module.exports = function createReadline(str) {
+  const _readlineGenerator = new GeneratorFunction(joinYield(splitLine(str)))
+  const _readline = _readlineGenerator()
 
-  // Notice:
-  // '\\n'.split('\n')  // [ '\\n' ]
-  // '\\n'.split('\\n') // [ '', '' ]
-  str = str.split('\n');
-
-  return `yield "${str.join('"; yield "')}";`;
-}
-
-function createReadline(str) {
-
-  // TODO: Error Check
-  // construct a generator function
-  let readlineGenerator = new Function(`return function* readline() {${joinYield(str)} return undefined;}`);
-  
-  readline = readlineGenerator()();
-  
   return function () {
-    return readline.next().value;
+    return _readline.next().value
   }
 }
 
-module.exports = createReadline;
+/**
+ * LF, CR, CRLF
+ * @param {string} str 
+ * @returns {string[]}
+ */
+function splitLine(str) {
+  return str.replace('\r\n', '\n').replace('\r', '\n').split('\n')
+}
+
+/**
+ * generate generator function's body array
+ * @param {string[]} arr 
+ * @returns {string[]}
+ */
+function joinYield(arr) {
+  return arr.map(str => `yield '${str}'`)
+}
